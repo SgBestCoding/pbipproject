@@ -1,0 +1,85 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.0.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY25SU11",
+      "reportVersionAtImport": {
+        "visual": "2.4.0",
+        "report": "3.0.0",
+        "page": "2.3.0"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "Power_BI_Theme_Generator_-_BIB17553331729706678.json",
+      "reportVersionAtImport": {
+        "visual": "2.4.0",
+        "report": "3.0.0",
+        "page": "2.3.0"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY25SU11",
+          "path": "BaseThemes/CY25SU11.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Power_BI_Theme_Generator_-_BIB17553331729706678.json",
+          "path": "Power_BI_Theme_Generator_-_BIB17553331729706678.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "premium_photo-1709579654090-3f08060389234934318.jpg",
+          "path": "premium_photo-1709579654090-3f08060389234934318.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "premium_photo-1709579654090-3f8640283923109675.jpg",
+          "path": "premium_photo-1709579654090-3f8640283923109675.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "premium_photo-1709579654090-3f20770900599320874.jpg",
+          "path": "premium_photo-1709579654090-3f20770900599320874.jpg",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

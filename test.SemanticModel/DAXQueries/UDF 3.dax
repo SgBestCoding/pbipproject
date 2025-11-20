@@ -1,0 +1,9 @@
+DEFINE FUNCTION KPIAlert = (Val, Target, Tolerance) =>
+VAR Diff = Val - Target
+RETURN
+    SWITCH(
+        TRUE(),
+        Diff >= Tolerance, "#00B050",      // Vert
+        Diff <= -Tolerance, "#FF0000",     // Rouge
+        "#FFC000"                          // Jaune
+    )

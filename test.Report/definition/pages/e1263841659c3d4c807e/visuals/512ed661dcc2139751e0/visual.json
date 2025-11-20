@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "512ed661dcc2139751e0",
+  "position": {
+    "x": 974.58966565349544,
+    "y": 35.987841945288757,
+    "z": 9,
+    "height": 55.440729483282681,
+    "width": 173.13069908814592,
+    "tabOrder": 9
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Currency"
+                    }
+                  },
+                  "Property": "Currency"
+                }
+              },
+              "queryRef": "Currency.Currency",
+              "nativeQueryRef": "Currency",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9e43099fb2080010208d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Currency"
+              }
+            },
+            "Property": "Currency"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

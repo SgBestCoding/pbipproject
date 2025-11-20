@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "dab8ef14b080030b08e1",
+  "position": {
+    "x": 561.21580547112467,
+    "y": 35.987841945288757,
+    "z": 2,
+    "height": 55.440729483282681,
+    "width": 173.13069908814592,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Table_test"
+                    }
+                  },
+                  "Property": "Produit"
+                }
+              },
+              "queryRef": "Table_test.Produit",
+              "nativeQueryRef": "Produit",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cc7e90cbb654be8c62c6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Table_test"
+              }
+            },
+            "Property": "Produit"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

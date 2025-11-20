@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "d0d9236739db990ec16d",
+  "position": {
+    "x": 805.34954407294833,
+    "y": 428.936170212766,
+    "z": 5,
+    "height": 277.20364741641339,
+    "width": 358.90577507598783,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Table_test"
+                    }
+                  },
+                  "Property": "Région"
+                }
+              },
+              "queryRef": "Table_test.Région",
+              "nativeQueryRef": "Région",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Table_test"
+                        }
+                      },
+                      "Property": "Produit"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Table_test.Produit)",
+              "nativeQueryRef": "Nombre de Produit"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Table_test"
+                      }
+                    },
+                    "Property": "Produit"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4c4356619ad1b1a60d08",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Table_test"
+                  }
+                },
+                "Property": "Produit"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2cbc356a56ddd21d9b94",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Table_test"
+              }
+            },
+            "Property": "Région"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

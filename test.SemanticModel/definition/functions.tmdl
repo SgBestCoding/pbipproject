@@ -1,0 +1,37 @@
+function 'pbi.NumberFormat' =
+		() =>
+		VAR _value = SELECTEDMEASURE()
+		VAR _absValue = ABS(_value)
+		RETURN
+		    SWITCH(TRUE(),
+		        _absValue >= 1e9, FORMAT(_value / 1e9, "#,##0.00") & " B",
+		        _absValue >= 1e6, FORMAT(_value / 1e6, "#,##0.00") & " M",
+		        _absValue >= 1e3, FORMAT(_value / 1e3, "#,##0") & " K",
+		        FORMAT(_value, "#,##0")
+		    )
+	lineageTag: 654ed198-0872-4e72-9703-a7d5da3457e4
+
+function ConvertCurrency =
+		(Amount, CurrencyCode) =>
+		VAR Rate =
+		    SWITCH(CurrencyCode,
+		        "EUR", 1,
+		        "USD", 1.08,
+		        "GBP", 0.85,
+		        1
+		    )
+		RETURN Amount * Rate
+	lineageTag: 1c30a31c-f1a6-4882-84f1-3ef0388de8b6
+
+function KPIAlert =
+		(Val, Target, Tolerance) =>
+		VAR Diff = Val - Target
+		RETURN
+		    SWITCH(
+		        TRUE(),
+		        Diff >= Tolerance, "#00B050",      // Vert
+		        Diff <= -Tolerance, "#FF0000",     // Rouge
+		        "#FFC000"                          // Jaune
+		    )
+	lineageTag: 43a59a41-23dd-4dcd-8767-e52fc1fc9045
+

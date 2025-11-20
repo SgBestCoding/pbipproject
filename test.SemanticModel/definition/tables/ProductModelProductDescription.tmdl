@@ -1,0 +1,69 @@
+table ProductModelProductDescription
+	lineageTag: 2af42679-9368-417f-964e-df6a889ca6ef
+
+	column rowguid
+		dataType: string
+		isNullable: false
+		sourceProviderType: uniqueidentifier
+		lineageTag: 2e5c4eaa-3aa6-4f3a-9ef8-ef2c4831c515
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		isNullable: false
+		formatString: General Date
+		sourceProviderType: datetime
+		lineageTag: cdfe7f0a-bf40-4c23-b99f-61da887b9e18
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductModelID
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 074ec30f-1f23-4dfa-b18c-46b75ec3c088
+		summarizeBy: none
+		sourceColumn: ProductModelID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductDescriptionID
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 2f6bf460-607f-40f8-8197-1585dd1bca8e
+		summarizeBy: none
+		sourceColumn: ProductDescriptionID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Culture
+		dataType: string
+		isNullable: false
+		sourceProviderType: nchar
+		lineageTag: 8217a104-383d-4c0f-b334-4b26faf7fc3d
+		summarizeBy: none
+		sourceColumn: Culture
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ProductModelProductDescription = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("dafrcqflcppetgo5saunst3muu-unyxm33eun3ebm2qyp6fjx57em.database.fabric.microsoft.com", "TS_Database-d59122c7-5b2d-4cee-9eaf-2289e480bfcb"),
+				    SalesLT_ProductModelProductDescription = Source{[Schema="SalesLT",Item="ProductModelProductDescription"]}[Data]
+				in
+				    SalesLT_ProductModelProductDescription
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

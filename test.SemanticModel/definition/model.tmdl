@@ -1,0 +1,24 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode","TMDLView_Desktop","MCP-PBIModeling"]
+
+annotation PBI_QueryOrder = ["Table_test","Currency","ProductModel","ProductModelProductDescription","ProductDescription"]
+
+ref table Table_test
+ref table DateTableTemplate_5f841858-095c-4145-8879-518844c6ca5a
+ref table LocalDateTable_0c3ce43c-25ad-4eb8-85bf-3d05366655ed
+ref table Currency
+ref table ProductModel
+ref table ProductModelProductDescription
+ref table ProductDescription
+
+ref cultureInfo fr-FR
+

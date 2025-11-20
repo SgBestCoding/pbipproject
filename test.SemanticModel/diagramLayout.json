@@ -1,0 +1,84 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1370,
+            "y": 62
+          },
+          "nodeIndex": "Table_test",
+          "nodeLineageTag": "f77f09cb-7d3e-49c0-a9c9-d75607f88988",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 802,
+            "y": 98
+          },
+          "nodeIndex": "Currency",
+          "nodeLineageTag": "5b94d9c8-7054-46bc-8f07-7a1e41766e92",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 181,
+            "y": 313
+          },
+          "nodeIndex": "ProductModel",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 0
+          },
+          "nodeIndex": "ProductModelProductDescription",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 409,
+            "y": 51
+          },
+          "nodeIndex": "ProductDescription",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Toutes les tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Toutes les tables",
+  "defaultDiagram": "Toutes les tables"
+}

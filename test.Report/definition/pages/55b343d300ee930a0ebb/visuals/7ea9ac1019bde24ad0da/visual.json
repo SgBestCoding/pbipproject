@@ -1,0 +1,114 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "7ea9ac1019bde24ad0da",
+  "position": {
+    "x": 774.4,
+    "y": 603.73333333333335,
+    "z": 2,
+    "height": 40.533333333333331,
+    "width": 100.26666666666667
+  },
+  "visual": {
+    "visualType": "actionButton",
+    "objects": {
+      "icon": [
+        {
+          "properties": {
+            "shapeType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rightArrow'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "visualLink": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'DataFunction'"
+                }
+              }
+            },
+            "dataFunction": {
+              "kind": "ItemLocation",
+              "byReference": {
+                "itemId": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'695f1068-1dc3-453c-9747-9e22c221cbd4'"
+                    }
+                  }
+                },
+                "workspaceId": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'6f7671a3-a364-4076-b350-c3fc54dfbf23'"
+                    }
+                  }
+                }
+              },
+              "metadata": {
+                "dataFunction": {
+                  "name": "write_one_to_sql_db",
+                  "autoRefresh": true,
+                  "parameters": [
+                    {
+                      "name": "productDescription",
+                      "dataType": "string",
+                      "isOptional": false,
+                      "type": "SlicerParameter",
+                      "slicer": "83a020ca1578b60cc780",
+                      "autoClear": false
+                    },
+                    {
+                      "name": "productModelId",
+                      "dataType": "number",
+                      "isOptional": false,
+                      "type": "ValueParameter",
+                      "value": {
+                        "expr": {
+                          "Aggregation": {
+                            "Expression": {
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Entity": "ProductModelProductDescription"
+                                  }
+                                },
+                                "Property": "ProductModelID"
+                              }
+                            },
+                            "Function": 4
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "howCreated": "InsertVisualButton"
+}

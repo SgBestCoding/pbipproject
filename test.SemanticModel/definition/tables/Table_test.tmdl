@@ -1,0 +1,78 @@
+table Table_test
+	lineageTag: f77f09cb-7d3e-49c0-a9c9-d75607f88988
+
+	measure Ventes_Measure = SUM(Table_test[Ventes])
+		lineageTag: d6b8d3ce-f7ca-4d0e-9bc3-3c381d950372
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sales in Selected Currency' =
+			
+			ConvertCurrency(
+			    [Ventes_Measure],                      // 1er argument : la mesure existante
+			    SELECTEDVALUE(Currency[Currency])     // 2e argument : la devise choisie par l’utilisateur
+			)
+		lineageTag: b37cc483-7ae7-414b-84d3-65ccafcdcd5d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Distinct count of Produit
+	measure 'nb of product' = DISTINCTCOUNT('Table_test'[Produit])
+
+	column Produit
+		dataType: string
+		lineageTag: 08bc356c-f9c5-4a7d-9bae-156dea11f336
+		summarizeBy: none
+		sourceColumn: Produit
+
+		annotation SummarizationSetBy = Automatic
+
+	column Région
+		dataType: string
+		lineageTag: 9e78cbd6-bc92-4d6d-8435-af0c9f3a7710
+		summarizeBy: none
+		sourceColumn: Région
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ventes
+		dataType: int64
+		formatString: 0
+		lineageTag: 0a29b063-ab84-4d21-bc61-4b8a3690a0fd
+		summarizeBy: sum
+		sourceColumn: Ventes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: deb8f703-44eb-4bde-979b-d03ebe18bf16
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 966e0e4b-27cb-49c7-a8bd-0bc3e8970547
+			defaultHierarchy: LocalDateTable_0c3ce43c-25ad-4eb8-85bf-3d05366655ed.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Table_test = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\SandraGallais-BS-Tea\Documents\Wave\Power BI\jeu_de_donnees_pbip.csv"),[Delimiter=",", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Valeur remplacée" = Table.ReplaceValue(Source,"1950","1950060",Replacer.ReplaceText,{"Column3"}),
+				    #"Valeur remplacée2" = Table.ReplaceValue(#"Valeur remplacée","1076","196000",Replacer.ReplaceText,{"Column3"}),
+				    #"En-têtes promus" = Table.PromoteHeaders(#"Valeur remplacée2", [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"Produit", type text}, {"Région", type text}, {"Ventes", Int64.Type}, {"Date", type date}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

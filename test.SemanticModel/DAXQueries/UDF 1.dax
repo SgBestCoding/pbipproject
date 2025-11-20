@@ -1,0 +1,10 @@
+DEFINE FUNCTION pbi.NumberFormat = () =>
+VAR _value = SELECTEDMEASURE()
+VAR _absValue = ABS(_value)
+RETURN
+    SWITCH(TRUE(),
+        _absValue >= 1e9, FORMAT(_value / 1e9, "#,##0.00") & " B",
+        _absValue >= 1e6, FORMAT(_value / 1e6, "#,##0.00") & " M",
+        _absValue >= 1e3, FORMAT(_value / 1e3, "#,##0") & " K",
+        FORMAT(_value, "#,##0")
+    )

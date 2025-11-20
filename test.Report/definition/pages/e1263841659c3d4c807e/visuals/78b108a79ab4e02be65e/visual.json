@@ -1,0 +1,228 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "78b108a79ab4e02be65e",
+  "position": {
+    "x": 56.413373860182375,
+    "y": 312.21884498480244,
+    "z": 0,
+    "height": 375.44072948328267,
+    "width": 693.49544072948333
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Table_test"
+                    }
+                  },
+                  "Property": "Date"
+                }
+              },
+              "queryRef": "Table_test.Date",
+              "nativeQueryRef": "Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Table_test"
+                    }
+                  },
+                  "Property": "Région"
+                }
+              },
+              "queryRef": "Table_test.Région",
+              "nativeQueryRef": "Région"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Table_test"
+                    }
+                  },
+                  "Property": "Produit"
+                }
+              },
+              "queryRef": "Table_test.Produit",
+              "nativeQueryRef": "Produit"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Table_test"
+                    }
+                  },
+                  "Property": "Ventes_Measure"
+                }
+              },
+              "queryRef": "Table_test.Ventes_Measure",
+              "nativeQueryRef": "Ventes_Measure"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "156.22493691114025D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Table_test.Produit"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "108.88451766631397D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Table_test.Région"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "174.1884663629063D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Table_test.Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "139.20668391296698D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Table_test.Ventes_Measure"
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Table_test.Ventes_Measure"
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f74f0d2f079eed01460c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Table_test"
+              }
+            },
+            "Property": "Région"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2d8dc27b09285ce0626e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Table_test"
+              }
+            },
+            "Property": "Produit"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e5e64b72e839b7e5683b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Table_test"
+              }
+            },
+            "Property": "Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ac2ed3168709008bc5d3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Table_test"
+              }
+            },
+            "Property": "Ventes_Measure"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

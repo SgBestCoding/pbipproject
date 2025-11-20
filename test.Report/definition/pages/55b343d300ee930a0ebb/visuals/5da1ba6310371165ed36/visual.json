@@ -1,0 +1,132 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "5da1ba6310371165ed36",
+  "position": {
+    "x": 78.933333333333337,
+    "y": 26.666666666666668,
+    "z": 0,
+    "height": 445.86666666666667,
+    "width": 1073.0666666666666
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ProductModelProductDescription"
+                    }
+                  },
+                  "Property": "ProductModelID"
+                }
+              },
+              "queryRef": "ProductModelProductDescription.ProductModelID",
+              "nativeQueryRef": "ProductModelID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ProductDescription"
+                    }
+                  },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "ProductDescription.Description",
+              "nativeQueryRef": "Description"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "ProductModelProductDescription"
+                  }
+                },
+                "Property": "ProductModelID"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "609D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "ProductDescription.Description"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "107D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "ProductModelProductDescription.ProductModelID"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "dc40fdf6269ec4b6dc02",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ProductDescription"
+              }
+            },
+            "Property": "Description"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "785ab37c026190c8bcd2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ProductModelProductDescription"
+              }
+            },
+            "Property": "ProductModelID"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

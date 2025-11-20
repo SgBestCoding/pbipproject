@@ -1,0 +1,13 @@
+relationship 966e0e4b-27cb-49c7-a8bd-0bc3e8970547
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Table_test.Date
+	toColumn: LocalDateTable_0c3ce43c-25ad-4eb8-85bf-3d05366655ed.Date
+
+relationship 5de18431-de5c-fa75-04c0-8460fca8a6f5
+	fromColumn: ProductModelProductDescription.ProductModelID
+	toColumn: ProductModel.ProductModelID
+
+relationship 75d961f6-b372-5244-74d1-abb24644622c
+	fromColumn: ProductDescription.ProductDescriptionID
+	toColumn: ProductModelProductDescription.ProductDescriptionID
+
