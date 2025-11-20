@@ -80,6 +80,19 @@
         "isDefaultSort": true
       }
     },
+    "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+          "fill": {
+            "solid": {
+            "color": "#008000"
+            }
+          }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
